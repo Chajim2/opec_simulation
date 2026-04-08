@@ -1,7 +1,6 @@
 import visualize
 import market
 import country
-from datetime import date
 
 SUPPLY_SENSITIVITY = 4    #how much does change in price affect the producers 
 BASE_PRICE = 80
@@ -33,9 +32,6 @@ class Simulation():
         
         for country in self.countries:
             country.add_history(new_price)
-
-
-
 
     def plot(self):
         visualize.plot(self.prices)
