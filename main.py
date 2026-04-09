@@ -6,7 +6,7 @@ import random
 SUPPLY_SENSITIVITY = 4    #how much does change in price affect the producers 
 BASE_PRICE = 80
 BASE_SUPPLY = 10 #million of barrels
-PROD_NOIDSE = 0.2
+PROD_NOISE = 0.2
 
 ROUNDS = 150
 
@@ -24,7 +24,7 @@ class Simulation():
         total_prod = 0
         for country in self.countries:
             country.production = country.decide_production(self.market_state)
-            country.production += random.uniform(-1, 1) * PROD_NOIDSE
+            country.production += random.uniform(-1, 1) * PROD_NOISE
             total_prod += country.production
             
         new_price = calc_price(total_prod, BASE_SUPPLY,
