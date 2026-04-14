@@ -3,9 +3,9 @@ import market
 import country
 import random
 
-SUPPLY_SENSITIVITY = 4    #how much does change in price affect the producers 
+SUPPLY_SENSITIVITY = 3   # how much the market price reacts to change in supply
 BASE_PRICE = 80
-BASE_SUPPLY = 10 #million of barrels
+BASE_SUPPLY = 10        # a million of barrels
 PROD_NOISE = 0.2
 
 ROUNDS = 150
@@ -28,7 +28,7 @@ class Simulation():
             total_prod += country.production
             
         new_price = calc_price(total_prod, BASE_SUPPLY,
-                                BASE_PRICE, SUPPLY_SENSITIVITY)
+                                BASE_PRICE * 1.02, SUPPLY_SENSITIVITY)
 
         self.prices.append(new_price)
         self.market_state.update(new_price, total_prod)
