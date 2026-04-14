@@ -26,9 +26,9 @@ class Simulation():
             country.production = country.decide_production(self.market_state)
             country.production += random.uniform(-1, 1) * PROD_NOISE
             total_prod += country.production
-            
+
         new_price = calc_price(total_prod, BASE_SUPPLY,
-                                BASE_PRICE * 1.02, SUPPLY_SENSITIVITY)
+                                BASE_PRICE, SUPPLY_SENSITIVITY)
 
         self.prices.append(new_price)
         self.market_state.update(new_price, total_prod)
