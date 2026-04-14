@@ -37,6 +37,8 @@ class Simulation():
             country.add_history(new_price)
 
     def plot(self):
+        compliance_list = [(c.name, c.compliance_history) for c in country.COUNTRIES]
+        visualize.plot_compliance(compliance_list)
         visualize.plot(self.prices)
 
 def main():
