@@ -4,7 +4,7 @@ import country
 import random
 
 SUPPLY_SENSITIVITY = 3   # how much the market price reacts to change in supply
-BASE_PRICE = 80
+BASE_PRICE = 80         # equilibrium price when supply matches base demand
 BASE_SUPPLY = 10        # a million of barrels
 PROD_NOISE = 0.2
 
