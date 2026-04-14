@@ -14,7 +14,7 @@ def play_creeper(country, market_state):
           or market_state.round == 0:
         return country.quota
     
-    return country.quota * (country.compliance_history[-1] + 0.01)
+    return country.quota * (country.compliance_history[-1] + 0.015)
 
 def play_enforce(country, market_state):
     if country.kwargs['flood_left'] > 0:

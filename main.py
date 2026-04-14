@@ -6,7 +6,7 @@ import random
 SUPPLY_SENSITIVITY = 3   # how much the market price reacts to change in supply
 BASE_PRICE = 80         # equilibrium price when supply matches base demand
 BASE_SUPPLY = 10        # a million of barrels
-PROD_NOISE = 0.2
+PROD_NOISE = 0.15
 
 ROUNDS = 150
 
@@ -37,9 +37,9 @@ class Simulation():
             country.add_history(new_price)
 
     def plot(self):
+        visualize.plot(self.prices)
         compliance_list = [(c.name, c.compliance_history) for c in country.COUNTRIES]
         visualize.plot_compliance(compliance_list)
-        visualize.plot(self.prices)
 
 def main():
     simulation = Simulation()
