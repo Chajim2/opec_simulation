@@ -3,9 +3,6 @@
     {
       "name": "Saudi Arabia",
       "quota": 10,
-
-
-      
       "mine_price": 3,
       "patience": 10,
       "strategy": "enforce",
