@@ -1,0 +1,38 @@
+{
+  "base_strat": [
+    {
+      "name": "Saudi Arabia",
+      "quota": 10,
+
+
+      
+      "mine_price": 3,
+      "patience": 10,
+      "strategy": "enforce",
+      "kwargs": {
+        "cutoff_price": 45,
+        "flood_left": 0,
+        "flood_length": 3,
+        "cooldown_left": 0,
+        "cooldown_length": 3
+      }
+    },
+    {
+      "name": "Venezuela",
+      "quota": 2,
+      "mine_price": 20,
+      "patience": 2,
+      "strategy": "random"
+    },
+    {
+      "name": "UAE",
+      "quota": 4,
+      "mine_price": 5,
+      "patience": 8,
+      "strategy": "creeper",
+      "kwargs": {
+        "cutoff_price": 45
+      }
+    }
+  ]
+}
