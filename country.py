@@ -1,7 +1,5 @@
 import strategies
-import random
-
-CHEAT_PROBABILITY = 0.3
+import json
 
 class Country():
     def __init__(self, patience: int, mine_price: int,
@@ -31,35 +29,20 @@ class Country():
         self.total_profit += (price - self.mine_price) * self.production
         self.compliance_history.append(self.production / self.quota)
 
+def load_countries(strategy_name, path="strategies.json"):
+    with open(path) as f:
+        data = json.load(f)
 
+    try:
+        configs = data[strategy_name]
+    except KeyError:
+        raise ValueError(f"Available strategies: {list(data.keys())}")
 
-COUNTRIES = [
-    Country(
-        name = "Saudi arabia",
-        quota = 10,
-        mine_price = 3,
-        patience = 10,
-        strategy = "enforce",
-        kwargs= {
-            "cutoff_price" : 45,
-            "flood_left" : 0,
-            "flood_length" : 3,
-            "cooldown_left" : 0,
-            "cooldown_length" : 3 
-        }
-    ),Country(
-        name="Venezuela",
-        quota=2,
-        mine_price=20,
-        patience=2,
-        strategy="random"
-    ),
-    Country(
-        name="UAE",
-        quota=4,
-        mine_price=5,
-        patience=8,
-        strategy="creeper",
-        kwargs={"cutoff_price" : 45}
-    )
-]
+    countries = []
+    for c in configs:
+        c.setdefault("kwargs", {})
+        countries.append(Country(**c))
+
+    return countries
+
+COUNTRIES = load_countries("base_strat") 
