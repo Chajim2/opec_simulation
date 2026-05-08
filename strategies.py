@@ -40,10 +40,14 @@ def play_desperate(country, market_state):
         return country.quota
     return country.quota * 1.2
 
+def play_passive(country, market_state):
+    return country.quota
+
 strategy_dict = {
     "comply" : play_comply,
     "random" : play_random,
     "creeper" : play_creeper,
     "enforce" : play_enforce,
-    "desperate" : play_desperate
+    "desperate" : play_desperate,
+    "passive" : play_passive
 }
