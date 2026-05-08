@@ -35,9 +35,15 @@ def play_enforce(country, market_state):
     country.kwargs['flood_left'] = country.kwargs['flood_length']
     return country.quota * 1.5
 
+def play_desperate(country, market_state):
+    if market_state.price > country.kwargs['budget_price']:
+        return country.quota
+    return country.quota * 1.2
+
 strategy_dict = {
     "comply" : play_comply,
     "random" : play_random,
     "creeper" : play_creeper,
-    "enforce" : play_enforce
+    "enforce" : play_enforce,
+    "desperate" : play_desperate
 }
