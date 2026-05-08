@@ -39,7 +39,12 @@ def play_desperate(country, market_state):
     if market_state.round == 0:
         return country.quota
 
-    #if market_state.price >= country.kwargs[]
+    if market_state.price >= country.kwargs['budget_price']:
+        return country.quota
+
+    multiplier = market_state.price / country.kwargs['budget_price']
+    return country.quota * multiplier
+
 
 def play_passive(country):
     return country.quota

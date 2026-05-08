@@ -5,14 +5,14 @@ import random
 
 SUPPLY_SENSITIVITY = 8   # how much the market price reacts to change in supply
 BASE_PRICE = 75         # equilibrium price when supply matches base demand
-BASE_SUPPLY = 16        # a million of barrels
+BASE_SUPPLY = 16        # daily production in a million of barrels of 4 OPEC countries
 PROD_NOISE = 0.1
 
 ROUNDS = 150
 
 def calc_price(supply, base_supply, base_price, sensitivity):
     price = base_price - sensitivity * (supply - base_supply)
-    return max(0,price)
+    return max(0, price)
 
 
 class Simulation():
