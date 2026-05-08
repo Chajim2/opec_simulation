@@ -2,14 +2,14 @@
   "base_strat": [
     {
       "name": "Saudi Arabia",
-      "quota": 10,
-      "mine_price": 3,
+      "quota": 9,
+      "mine_price": 5,
       "patience": 10,
       "strategy": "enforce",
       "kwargs": {
         "cutoff_price": 45,
         "flood_left": 0,
-        "flood_length": 3,
+        "flood_length": 5,
         "cooldown_left": 0,
         "cooldown_length": 3
       }
@@ -19,7 +19,7 @@
       "quota": 2,
       "mine_price": 20,
       "patience": 2,
-      "strategy": "random"
+      "strategy": "passive"
     },
     {
       "name": "UAE",
@@ -29,6 +29,16 @@
       "strategy": "creeper",
       "kwargs": {
         "cutoff_price": 45
+      }
+    },
+    {
+      "name": "Nigeria",
+      "quota": 1.5,
+      "mine_price": 5,
+      "patience": 4,
+      "strategy": "desperate",
+      "kwargs": {
+        "budget_price": 60
       }
     }
   ]

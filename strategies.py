@@ -46,7 +46,7 @@ def play_desperate(country, market_state):
     return country.quota * multiplier
 
 
-def play_passive(country):
+def play_passive(country, market_state):
     return country.quota
 
 strategy_dict = {
