@@ -8,7 +8,7 @@ def plot(prices: list[int]) -> None:
     line_plot.set_ylabel("Barrel price ($)", fontsize=12)
     line_plot.set_title("Crude oil price", fontsize=15)
 
-    fig.savefig("res.png")
+    fig.savefig("0_price.png")
     fig.clear()
 
 def plot_compliance(compliance_list: list[tuple[str, list[float]]]) -> None:
@@ -24,5 +24,5 @@ def plot_compliance(compliance_list: list[tuple[str, list[float]]]) -> None:
     line_plot.set_title("Compliance over time", fontsize=15)
 
     line_plot.legend()
-    fig.savefig("compliance.png")
+    fig.savefig("0_compliance.png")
     fig.clear()
