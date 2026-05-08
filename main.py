@@ -11,7 +11,8 @@ PROD_NOISE = 0.1
 ROUNDS = 150
 
 def calc_price(supply, base_supply, base_price, sensitivity):
-    return  base_price - sensitivity * (supply - base_supply) 
+    price = base_price - sensitivity * (supply - base_supply)
+    return max(0,price)
 
 
 class Simulation():
