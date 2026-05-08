@@ -36,11 +36,12 @@ def play_enforce(country, market_state):
     return country.quota * 1.5
 
 def play_desperate(country, market_state):
-    if market_state.price > country.kwargs['budget_price']:
+    if market_state.round == 0:
         return country.quota
-    return country.quota * 1.2
 
-def play_passive(country, market_state):
+    #if market_state.price >= country.kwargs[]
+
+def play_passive(country):
     return country.quota
 
 strategy_dict = {
