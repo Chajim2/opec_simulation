@@ -12,7 +12,7 @@ ROUNDS = 150
 
 def calc_price(supply, base_supply, base_price, sensitivity):
     price = base_price - sensitivity * (supply - base_supply)
-    return max(0, price)
+    return max(10, price)
 
 
 class Simulation():
@@ -39,8 +39,8 @@ class Simulation():
 
     def plot(self):
         visualize.plot(self.prices)
-        compliance_list = [(c.name, c.compliance_history) for c in country.COUNTRIES]
-        visualize.plot_compliance(compliance_list)
+        cheat_index_list = [(c.name, c.cheat_index_history) for c in country.COUNTRIES]
+        visualize.plot_cheat_index(cheat_index_list)
 
 def main():
     simulation = Simulation()

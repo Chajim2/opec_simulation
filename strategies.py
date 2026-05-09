@@ -14,7 +14,7 @@ def play_creeper(country, market_state):
           or market_state.round == 0:
         return country.quota
     
-    return country.quota * (country.compliance_history[-1] + 0.015)
+    return country.quota * (country.cheat_index_history[-1] + 0.015)
 
 def play_enforce(country, market_state):
     if country.kwargs['flood_left'] > 0:
@@ -42,7 +42,7 @@ def play_desperate(country, market_state):
     if market_state.price >= country.kwargs['budget_price']:
         return country.quota
 
-    multiplier = market_state.price / country.kwargs['budget_price']
+    multiplier = country.kwargs['budget_price'] / market_state.price
     return country.quota * multiplier
 
 

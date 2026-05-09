@@ -15,7 +15,7 @@ class Country():
         self.production = quota
         self.total_revenue = 0
         self.total_profit = 0
-        self.compliance_history = []
+        self.cheat_index_history = []
         self.strategy = strategy    
 
     def decide_production(self, market_state) -> float:
@@ -27,7 +27,7 @@ class Country():
 
         self.total_revenue += price * self.production
         self.total_profit += (price - self.mine_price) * self.production
-        self.compliance_history.append(self.production / self.quota)
+        self.cheat_index_history.append(self.production / self.quota)
 
 def load_countries(strategy_name, path="strategies.json"):
     with open(path) as f:
