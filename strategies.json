@@ -38,7 +38,8 @@
       "patience": 4,
       "strategy": "desperate",
       "kwargs": {
-        "budget_price": 60
+        "budget_price": 60,
+        "max_production" : 2
       }
     }
   ]

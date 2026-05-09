@@ -35,6 +35,10 @@ def play_enforce(country, market_state):
     country.kwargs['flood_left'] = country.kwargs['flood_length']
     return country.quota * 1.5
 
+# Country playing this strategy desperate do maintain stable revenue from crude oil production
+# Target revenue is calculated as budget price times quota
+# Therefore, if market price drop bellow budget price, the quantity to has to
+# increase to make that same revenue
 def play_desperate(country, market_state):
     if market_state.round == 0:
         return country.quota
@@ -42,8 +46,10 @@ def play_desperate(country, market_state):
     if market_state.price >= country.kwargs['budget_price']:
         return country.quota
 
-    multiplier = country.kwargs['budget_price'] / market_state.price
-    return country.quota * multiplier
+    dynamic_multiplier = country.kwargs['budget_price'] / market_state.price
+    max_production_multiplier = country.kwargs['max_production'] / country.quota
+
+    return country.quota * min(max_production_multiplier, dynamic_multiplier)
 
 
 def play_passive(country, market_state):
