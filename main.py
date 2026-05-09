@@ -8,7 +8,7 @@ BASE_PRICE = 75         # equilibrium price when supply matches base demand
 BASE_SUPPLY = 16        # daily production in a million of barrels of 4 OPEC countries
 PROD_NOISE = 0.1
 
-ROUNDS = 150
+ROUNDS = 50
 
 def calc_price(supply, base_supply, base_price, sensitivity):
     price = base_price - sensitivity * (supply - base_supply)

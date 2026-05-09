@@ -52,14 +52,10 @@ def play_desperate(country, market_state):
     return country.quota * min(max_production_multiplier, dynamic_multiplier)
 
 
-def play_passive(country, market_state):
-    return country.quota
-
 strategy_dict = {
     "comply" : play_comply,
     "random" : play_random,
     "creeper" : play_creeper,
     "enforce" : play_enforce,
-    "desperate" : play_desperate,
-    "passive" : play_passive
+    "desperate" : play_desperate
 }

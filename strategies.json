@@ -7,7 +7,7 @@
       "patience": 10,
       "strategy": "enforce",
       "kwargs": {
-        "cutoff_price": 45,
+        "cutoff_price": 68,
         "flood_left": 0,
         "flood_length": 5,
         "cooldown_left": 0,
@@ -16,25 +16,25 @@
     },
     {
       "name": "Venezuela",
-      "quota": 2,
-      "mine_price": 20,
+      "quota": 1.8,
+      "mine_price": 35,
       "patience": 2,
-      "strategy": "passive"
+      "strategy": "comply"
     },
     {
       "name": "UAE",
       "quota": 4,
-      "mine_price": 5,
+      "mine_price": 12,
       "patience": 8,
       "strategy": "creeper",
       "kwargs": {
-        "cutoff_price": 45
+        "cutoff_price": 62
       }
     },
     {
       "name": "Nigeria",
       "quota": 1.5,
-      "mine_price": 5,
+      "mine_price": 30,
       "patience": 4,
       "strategy": "desperate",
       "kwargs": {
