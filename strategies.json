@@ -42,5 +42,95 @@
         "max_production" : 2
       }
     }
+  ],
+
+  "compliance_strat": [
+    {
+      "name": "Saudi Arabia",
+      "quota": 9,
+      "mine_price": 5,
+      "patience": 10,
+      "strategy": "comply",
+      "kwargs": {
+        "cutoff_price": 68,
+        "flood_left": 0,
+        "flood_length": 5,
+        "cooldown_left": 0,
+        "cooldown_length": 3
+      }
+    },
+    {
+      "name": "Venezuela",
+      "quota": 1.8,
+      "mine_price": 35,
+      "patience": 2,
+      "strategy": "comply"
+    },
+    {
+      "name": "UAE",
+      "quota": 4,
+      "mine_price": 12,
+      "patience": 8,
+      "strategy": "comply",
+      "kwargs": {
+        "cutoff_price": 62
+      }
+    },
+    {
+      "name": "Nigeria",
+      "quota": 1.5,
+      "mine_price": 30,
+      "patience": 4,
+      "strategy": "comply",
+      "kwargs": {
+        "budget_price": 60,
+        "max_production" : 2
+      }
+    }
+  ],
+
+  "saudi_saviour": [
+    {
+      "name": "Saudi Arabia",
+      "quota": 9,
+      "mine_price": 5,
+      "patience": 10,
+      "strategy": "save_market",
+      "kwargs": {
+        "cutoff_price": 68,
+        "flood_left": 0,
+        "flood_length": 5,
+        "cooldown_left": 0,
+        "cooldown_length": 3
+      }
+    },
+    {
+      "name": "Venezuela",
+      "quota": 1.8,
+      "mine_price": 35,
+      "patience": 2,
+      "strategy": "comply"
+    },
+    {
+      "name": "UAE",
+      "quota": 4,
+      "mine_price": 12,
+      "patience": 8,
+      "strategy": "creeper",
+      "kwargs": {
+        "cutoff_price": 62
+      }
+    },
+    {
+      "name": "Nigeria",
+      "quota": 1.5,
+      "mine_price": 30,
+      "patience": 4,
+      "strategy": "desperate",
+      "kwargs": {
+        "budget_price": 60,
+        "max_production" : 2
+      }
+    }
   ]
 }

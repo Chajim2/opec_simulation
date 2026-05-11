@@ -67,5 +67,5 @@ strategy_dict = {
     "creeper" : play_creeper,
     "enforce" : play_enforce,
     "desperate" : play_desperate,
-    "save market" : play_save_market
+    "save_market" : play_save_market
 }

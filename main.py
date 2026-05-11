@@ -52,7 +52,14 @@ def main():
 if __name__ == "__main__":
     main()
 
-    print("Profit of Each Country:")
+    # only gives trustworthy results when PROD_NOISE = 0
+    cartel_total = 0
+    print("Profit of Each Country with noise fixed to zero:")
     print("")
     for country in country.COUNTRIES:
-        print(f"{country.name} : $ {int(country.total_profit)}")
+        print(f"{country.name} : ${int(country.total_profit)}")
+        cartel_total += country.total_profit
+
+    print("")
+    print(f"Total profit of OPEC cartel with noise fixed to zero: ${int(cartel_total)}")
+
