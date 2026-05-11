@@ -51,11 +51,21 @@ def play_desperate(country, market_state):
 
     return country.quota * min(max_production_multiplier, dynamic_multiplier)
 
+def play_save_market(country, market_state):
+    if market_state.round == 0:
+        return country.quota
+
+    if market_state.price < country.kwargs['cutoff_price']:
+        return country.quota * 0.8
+
+    return country.quota
+
 
 strategy_dict = {
     "comply" : play_comply,
     "random" : play_random,
     "creeper" : play_creeper,
     "enforce" : play_enforce,
-    "desperate" : play_desperate
+    "desperate" : play_desperate,
+    "save market" : play_save_market
 }
