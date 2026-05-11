@@ -60,6 +60,8 @@ def play_save_market(country, market_state):
 
     return country.quota
 
+def play_max_production(coutry, market_state):
+    return coutry.kwargs['max_production']
 
 strategy_dict = {
     "comply" : play_comply,
@@ -67,5 +69,6 @@ strategy_dict = {
     "creeper" : play_creeper,
     "enforce" : play_enforce,
     "desperate" : play_desperate,
-    "save_market" : play_save_market
+    "save_market" : play_save_market,
+    "max_production" : play_max_production
 }

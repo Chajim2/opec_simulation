@@ -11,7 +11,9 @@
         "flood_left": 0,
         "flood_length": 5,
         "cooldown_left": 0,
-        "cooldown_length": 3
+        "cooldown_length": 3,
+        "budget_price": 82,
+        "max_production": 12.0
       }
     },
     {
@@ -19,7 +21,11 @@
       "quota": 1.8,
       "mine_price": 35,
       "patience": 2,
-      "strategy": "comply"
+      "strategy": "comply",
+      "kwargs": {
+        "budget_price": 120,
+        "max_production": 2.2
+      }
     },
     {
       "name": "UAE",
@@ -28,7 +34,9 @@
       "patience": 8,
       "strategy": "creeper",
       "kwargs": {
-        "cutoff_price": 62
+        "cutoff_price": 62,
+        "budget_price": 65,
+        "max_production": 4.5
       }
     },
     {
@@ -56,7 +64,9 @@
         "flood_left": 0,
         "flood_length": 5,
         "cooldown_left": 0,
-        "cooldown_length": 3
+        "cooldown_length": 3,
+        "budget_price": 82,
+        "max_production": 12.0
       }
     },
     {
@@ -64,7 +74,11 @@
       "quota": 1.8,
       "mine_price": 35,
       "patience": 2,
-      "strategy": "comply"
+      "strategy": "comply",
+      "kwargs": {
+        "budget_price": 120,
+        "max_production": 2.2
+      }
     },
     {
       "name": "UAE",
@@ -73,7 +87,9 @@
       "patience": 8,
       "strategy": "comply",
       "kwargs": {
-        "cutoff_price": 62
+        "cutoff_price": 62,
+        "budget_price": 65,
+        "max_production": 4.5
       }
     },
     {
@@ -101,7 +117,9 @@
         "flood_left": 0,
         "flood_length": 5,
         "cooldown_left": 0,
-        "cooldown_length": 3
+        "cooldown_length": 3,
+        "budget_price": 82,
+        "max_production": 12.0
       }
     },
     {
@@ -109,7 +127,12 @@
       "quota": 1.8,
       "mine_price": 35,
       "patience": 2,
-      "strategy": "comply"
+      "strategy": "comply",
+      "kwargs": {
+        "budget_price": 120,
+        "max_production": 2.2,
+        "cutoff_price": 100
+      }
     },
     {
       "name": "UAE",
@@ -118,7 +141,9 @@
       "patience": 8,
       "strategy": "creeper",
       "kwargs": {
-        "cutoff_price": 62
+        "cutoff_price": 62,
+        "budget_price": 65,
+        "max_production": 4.5
       }
     },
     {
@@ -127,6 +152,60 @@
       "mine_price": 30,
       "patience": 4,
       "strategy": "desperate",
+      "kwargs": {
+        "budget_price": 60,
+        "max_production" : 2,
+        "cutoff_price": 50
+      }
+    }
+  ],
+
+  "ignore_opec": [
+    {
+      "name": "Saudi Arabia",
+      "quota": 9,
+      "mine_price": 5,
+      "patience": 10,
+      "strategy": "max_production",
+      "kwargs": {
+        "cutoff_price": 68,
+        "flood_left": 0,
+        "flood_length": 5,
+        "cooldown_left": 0,
+        "cooldown_length": 3,
+        "budget_price": 82,
+        "max_production": 12.0
+      }
+    },
+    {
+      "name": "Venezuela",
+      "quota": 1.8,
+      "mine_price": 35,
+      "patience": 2,
+      "strategy": "max_production",
+      "kwargs": {
+        "budget_price": 120,
+        "max_production": 2.2
+      }
+    },
+    {
+      "name": "UAE",
+      "quota": 4,
+      "mine_price": 12,
+      "patience": 8,
+      "strategy": "max_production",
+      "kwargs": {
+        "cutoff_price": 62,
+        "budget_price": 65,
+        "max_production": 4.5
+      }
+    },
+    {
+      "name": "Nigeria",
+      "quota": 1.5,
+      "mine_price": 30,
+      "patience": 4,
+      "strategy": "max_production",
       "kwargs": {
         "budget_price": 60,
         "max_production" : 2
