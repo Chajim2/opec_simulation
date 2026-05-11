@@ -51,3 +51,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    print("Profit of Each Country:")
+    print("")
+    for country in country.COUNTRIES:
+        print(f"{country.name} : $ {int(country.total_profit)}")
