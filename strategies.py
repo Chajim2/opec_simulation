@@ -31,7 +31,7 @@ def play_enforce(country, market_state):
           or market_state.round == 0:
         return country.quota
     
-    # raise hell
+    # start overproducing
     country.kwargs['flood_left'] = country.kwargs['flood_length']
     return country.quota * 1.5
 
