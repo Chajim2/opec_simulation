@@ -6,7 +6,7 @@ import random
 SUPPLY_SENSITIVITY = 8   # how much the market price reacts to change in supply
 BASE_PRICE = 75         # equilibrium price when supply matches base demand
 BASE_SUPPLY = 16        # daily production in a million of barrels of 4 OPEC countries
-PROD_NOISE = 0.0
+PROD_NOISE = 0.1
 
 ROUNDS = 50
 
