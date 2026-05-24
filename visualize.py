@@ -4,6 +4,8 @@ def plot(prices: list[int]) -> None:
     line_plot = sns.lineplot(prices)
     fig = line_plot.get_figure()
 
+    line_plot.set_ylim(30, 100)
+
     line_plot.set_xlabel("Rounds", fontsize=12)
     line_plot.set_ylabel("Barrel price ($)", fontsize=12)
     line_plot.set_title("Crude oil price", fontsize=15)
@@ -18,6 +20,8 @@ def plot_cheat_index(cheat_index_list: list[tuple[str, list[float]]]) -> None:
         line_plot = sns.lineplot(cheat_index, label=name)
 
     fig = line_plot.get_figure()
+
+    line_plot.set_ylim(0.8, 2)
 
     line_plot.set_xlabel("Rounds", fontsize=12)
     line_plot.set_ylabel("Level of cheating", fontsize=12)
