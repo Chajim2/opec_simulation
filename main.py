@@ -10,7 +10,7 @@ PROD_NOISE = 0.1
 DEMAND_SHOCK_SIZE = -30
 
 ROUNDS = 50
-DEMAND_SHOCK_ROUND = ROUNDS // 2 # set to above rounds so it never triggers, 
+DEMAND_SHOCK_ROUND = ROUNDS * 2 # set to above rounds so it never triggers, 
                                 #change to // 2 for a demand shock
 
 def calc_price(supply, base_supply, base_price, sensitivity):

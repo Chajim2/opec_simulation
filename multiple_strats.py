@@ -21,6 +21,8 @@ def compare_all():
     with open("strategies.json", "r") as f:
         all_strats = json.load(f)
     for name, _ in all_strats.items():
+        if name not in ["saudi_enforce", "saudi_saviour"]:
+            continue
         STRAT_NAMES.append(name)
         one_run(name)
     
