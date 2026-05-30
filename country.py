@@ -45,4 +45,4 @@ def load_countries(strategy_name, path="strategies.json"):
 
     return countries
 
-COUNTRIES = load_countries("saudi_saviour")
+COUNTRIES = load_countries("ignore_opec")

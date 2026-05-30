@@ -1,5 +1,5 @@
 {
-  "saudi_enforce": [
+  "base_strat": [
     {
       "name": "Saudi Arabia",
       "quota": 9,

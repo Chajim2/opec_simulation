@@ -10,6 +10,3 @@ class MarketState():
         self.price = price
         self.total_production = total_production
         self.round += 1
-    
-    def set_price(self, new_price: float) -> None:
-        self.price = new_price
