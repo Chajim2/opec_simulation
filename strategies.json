@@ -208,6 +208,7 @@
       "strategy": "max_production",
       "kwargs": {
         "budget_price": 60,
+        "cutoff_price": 50,
         "max_production" : 2
       }
     }
