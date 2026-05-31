@@ -6,7 +6,7 @@ import random
 SUPPLY_SENSITIVITY = 8   # how much the market price reacts to change in supply
 BASE_PRICE = 75         # equilibrium price when supply matches base demand
 BASE_SUPPLY = 16        # daily production in a million of barrels of 4 OPEC countries
-PROD_NOISE = 0.0
+PROD_NOISE = 0.15
 
 ROUNDS = 50
 
@@ -42,6 +42,15 @@ class Simulation():
         visualize.plot(self.prices)
         cheat_index_list = [(c.name, c.cheat_index_history) for c in country.COUNTRIES]
         visualize.plot_cheat_index(cheat_index_list)
+    
+    def change_strat(self, new_strat):
+        self.countries = country.load_countries(new_strat)
+
+    def get_revenues(self):
+        return [c.total_revenue for c in self.countries]
+    
+    def get_prices(self):
+        return self.prices
 
 def main():
     simulation = Simulation()
@@ -55,12 +64,12 @@ if __name__ == "__main__":
 
     # only gives trustworthy results when PROD_NOISE = 0
     cartel_total = 0
-    print("Profit of Each Country with noise fixed to zero:")
+    print("Revenue of Each Country with noise fixed to zero:")
     print("")
     for country in country.COUNTRIES:
-        print(f"{country.name} : ${int(country.total_profit)}")
-        cartel_total += country.total_profit
+        print(f"{country.name} : ${int(country.total_revenue)}")
+        cartel_total += country.total_revenue
 
     print("")
-    print(f"Total profit of OPEC cartel with noise fixed to zero: ${int(cartel_total)}")
+    print(f"Total revenue of OPEC cartel with noise fixed to zero: ${int(cartel_total)}")
 
