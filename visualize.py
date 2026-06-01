@@ -9,7 +9,7 @@ def plot(prices: list[int]) -> None:
     line_plot.set_ylabel("Barrel price ($)", fontsize=12)
     line_plot.set_title("Crude oil price", fontsize=15)
 
-    fig.savefig("0_price.png")
+    fig.savefig("price.png")
     fig.clear()
 
 def plot_cheat_index(cheat_index_list: list[tuple[str, list[float]]]) -> None:
@@ -27,7 +27,7 @@ def plot_cheat_index(cheat_index_list: list[tuple[str, list[float]]]) -> None:
     line_plot.set_ylim(0.8, 2)
 
     line_plot.legend()
-    fig.savefig("0_cheating.png")
+    fig.savefig("cheating.png")
     fig.clear()
 
 def plot_revenues(revenues : list[int], countries : list[str]):
