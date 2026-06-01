@@ -21,16 +21,18 @@ def calc_price(supply, base_supply, base_price, sensitivity):
 
 
 class Simulation:
-    def __init__(self, strat_name):
+    def __init__(self, strat_name, use_noise = True):
         self.market_state = market.MarketState(BASE_PRICE, BASE_SUPPLY)
         self.countries = self.load_countries(strategy_name=strat_name)
         self.prices = []
+        self.use_noise = use_noise
 
     def step(self):
         total_prod = 0
         for country in self.countries:
             country.production = country.decide_production(self.market_state)
-            country.production += random.uniform(-1, 1) * PROD_NOISE
+            if self.use_noise:
+                country.production += random.uniform(-1, 1) * PROD_NOISE
             total_prod += country.production
 
         new_price = calc_price(total_prod, BASE_SUPPLY, BASE_PRICE, SUPPLY_SENSITIVITY)
@@ -77,6 +79,11 @@ def main():
         simulation.step()
 
     simulation.plot()
+
+    
+    simulation = Simulation(CURR_STRAT, use_noise=False)
+    for _ in range(ROUNDS):
+        simulation.step()
 
     cartel_total = 0
     print("strategy: ", CURR_STRAT)
