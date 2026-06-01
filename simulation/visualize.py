@@ -9,7 +9,9 @@ def plot(prices: list[int]) -> None:
     line_plot.set_ylabel("Barrel price ($)", fontsize=12)
     line_plot.set_title("Crude oil price", fontsize=15)
 
-    fig.savefig("price.png")
+    line_plot.set_ylim(0, 100)
+
+    fig.savefig("results/price.png")
     fig.clear()
 
 def plot_cheat_index(cheat_index_list: list[tuple[str, list[float]]]) -> None:
@@ -27,7 +29,7 @@ def plot_cheat_index(cheat_index_list: list[tuple[str, list[float]]]) -> None:
     line_plot.set_ylim(0.8, 2)
 
     line_plot.legend()
-    fig.savefig("cheating.png")
+    fig.savefig("results/cheating.png")
     fig.clear()
 
 def plot_revenues(revenues : list[int], countries : list[str]):
@@ -41,7 +43,7 @@ def plot_revenues(revenues : list[int], countries : list[str]):
     bar_plot.set_ylim(0, 30_000)
 
     fig.tight_layout()
-    fig.savefig("revenues.png")
+    fig.savefig("results/revenues.png")
     fig.clear()
 
 def plot_strategy_revenues(strategy_data: dict[str, list[float]], countries: list[str]) -> None:
@@ -73,7 +75,7 @@ def plot_strategy_revenues(strategy_data: dict[str, list[float]], countries: lis
     bar_plot.set_ylim(0, 40_000)
 
     fig.tight_layout()
-    fig.savefig("strategy_revenues.png")
+    fig.savefig("results/strategy_revenues.png")
     fig.clear()
 
 
@@ -99,5 +101,5 @@ def plot_strategy_prices(strategy_names: list[str],
 
     line_plot.legend()
 
-    fig.savefig("strategy_prices.png")
+    fig.savefig("results/strategy_prices.png")
     fig.clear()

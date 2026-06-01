@@ -1,4 +1,4 @@
-import strategies
+import simulation.strategies as strategies
 import json
 
 class Country():
@@ -28,22 +28,3 @@ class Country():
         self.total_revenue += price * self.production
         self.total_profit += (price - self.mine_price) * self.production
         self.cheat_index_history.append(self.production / self.quota)
-
-def load_countries(strategy_name, path="strategies.json"):
-    with open(path) as f:
-        data = json.load(f)
-
-    try:
-        configs = data[strategy_name]
-    except KeyError:
-        raise ValueError(f"Available strategies: {list(data.keys())}")
-
-    countries = []
-    for c in configs:
-        c.setdefault("kwargs", {})
-        countries.append(Country(**c))
-
-    return countries
-
-# choose a strategy here
-COUNTRIES = load_countries("saudi_saviour")

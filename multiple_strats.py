@@ -1,5 +1,5 @@
 from main import Simulation, ROUNDS
-from visualize import plot_strategy_revenues, plot_strategy_prices
+from simulation.visualize import plot_strategy_revenues, plot_strategy_prices
 import json
 
 rev_by_strat = {}
@@ -9,8 +9,7 @@ COUNTRY_NAMES = ["Saudi Arabia", "Venezuela", "UAE", "Nigeria"]
 STRAT_NAMES = []
 
 def one_run(strat_name):
-    simulation = Simulation()
-    simulation.change_strat(strat_name)
+    simulation = Simulation(strat_name)
     for _ in range(ROUNDS):
         simulation.step()
     rev_by_strat[strat_name] = simulation.get_revenues()
@@ -21,8 +20,8 @@ def compare_all():
     with open("strategies.json", "r") as f:
         all_strats = json.load(f)
     for name, _ in all_strats.items():
-        if name not in ["saudi_enforcer", "saudi_saviour"]:
-            continue
+        #if name not in ["saudi_enforcer", "saudi_saviour"]:
+         #   continue
         STRAT_NAMES.append(name)
         one_run(name)
     
